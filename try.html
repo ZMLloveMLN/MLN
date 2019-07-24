@@ -1,0 +1,540 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <title>思念&苗</title>-->
+<!--</head>-->
+<!--<body>-->
+
+<!--</body>-->
+<!--</html>-->
+<!doctype html>
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf8" />
+  <meta name="viewport" content="width=device-width,user-scalable=no" />
+  <meta name="format-detection" content="telephone=no">
+<title>思念&苗</title>
+<meta name="keywords" content="本网页由ZhangML原创" />
+<meta name="description" content="苗莉shi！" />
+</head>
+<style type="text/css">
+body{text-align:center;margin:0px;padding:0px;font-size:25px;color:#FFF;font-family:"微软雅黑";background:#f3961c;}div{text-align:left;position:relative;z-index:1}.tittle{width:100%;background:#f3961c;top:0px;height:100%;z-index:0;position:absolute;position:fixed !important;display:none;cursor:default;}.big{font-family:"微软雅黑";color:#FFF;font-size:35px;}.tishi{position:absolute;position:fixed !important;z-index:99;bottom:10px;width:100%;text-align:center;}.tishiContent{border:1px solid #FFF;font-size:18px;padding:5px;cursor:pointer;border-radius:5px;}img{position: relative;z-index: 2}
+</style>
+<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+if(localStorage["index"]=="1"){window.location="#"}$(document).ready(function(e){$(document).scrollTop(300);timer=setInterval("$.change()",6000);t=1;$("#t-"+t).fadeIn();$(document).click(function(){clearInterval(timer);$.change()});$.change=function(){t++;if(t<=$(".tittle").length){$(".tittle").slideUp(1500).fadeOut();$("#t-"+t).slideDown(1500).fadeIn()}else{localStorage["index"]="1";window.location="#"}}});
+</script>
+
+<script type="text/javascript">
+    	/*7Core-CN - 网页鼠标点击特效（爱心）*/
+        !function (e, t, a) {function r() {for (var e = 0; e < s.length; e++) s[e].alpha <= 0 ? (t.body.removeChild(s[e].el), s.splice(e, 1)) : (s[e].y--, s[e].scale += .004, s[e].alpha -= .013, s[e].el.style.cssText = "left:" + s[e].x + "px;top:" + s[e].y + "px;opacity:" + s[e].alpha + ";transform:scale(" + s[e].scale + "," + s[e].scale + ") rotate(45deg);background:" + s[e].color + ";z-index:99999");requestAnimationFrame(r)}function n() {var t = "function" == typeof e.onclick && e.onclick;e.onclick = function (e) {t && t(), o(e)}}function o(e) {var a = t.createElement("div");a.className = "heart", s.push({el: a,x: e.clientX - 5,y: e.clientY - 5,scale: 1,alpha: 1,color: c()}), t.body.appendChild(a)}function i(e) {var a = t.createElement("style");a.type = "text/css";try {a.appendChild(t.createTextNode(e))} catch (t) {a.styleSheet.cssText = e}t.getElementsByTagName("head")[0].appendChild(a)}function c() {return "rgb(" + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + "," + ~~(255 * Math.random()) + ")"}var s = [];e.requestAnimationFrame = e.requestAnimationFrame || e.webkitRequestAnimationFrame || e.mozRequestAnimationFrame || e.oRequestAnimationFrame || e.msRequestAnimationFrame || function (e) {setTimeout(e, 1e3 / 60)}, i(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: fixed;}.heart:after{top: -5px;}.heart:before{left: -5px;}"), n(), r()}(window, document);
+</script>
+<script>            //鼠标点击出现爱心特效
+		(function(window,document,undefined){
+			var hearts = [];
+			window.requestAnimationFrame = (function(){
+				return window.requestAnimationFrame ||
+				window.webkitRequestAnimationFrame ||
+				window.mozRequestAnimationFrame ||
+				window.oRequestAnimationFrame ||
+				window.msRequestAnimationFrame ||
+				function (callback){
+					setTimeout(callback,1000/60);
+				}
+			})();
+			init();
+			function init(){
+				css(".heart{width: 10px;height: 10px;position: fixed;background: #f00;transform: rotate(45deg);-webkit-transform: rotate(45deg);-moz-transform: rotate(45deg);}.heart:after,.heart:before{content: '';width: inherit;height: inherit;background: inherit;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;position: absolute;}.heart:after{top: -5px;}.heart:before{left: -5px;}");
+				attachEvent();
+				gameloop();
+			}
+			function gameloop(){
+				for(var i=0;i<hearts.length;i++){
+					if(hearts[i].alpha <=0){
+						document.body.removeChild(hearts[i].el);
+						hearts.splice(i,1);
+						continue;
+					}
+					hearts[i].y--;
+					hearts[i].scale += 0.004;
+					hearts[i].alpha -= 0.013;
+					hearts[i].el.style.cssText = "left:"+hearts[i].x+"px;top:"+hearts[i].y+"px;opacity:"+hearts[i].alpha+";transform:scale("+hearts[i].scale+","+hearts[i].scale+") rotate(45deg);background:"+hearts[i].color;
+				}
+				requestAnimationFrame(gameloop);
+			}
+			function attachEvent(){
+				var old = typeof window.οnclick==="function" && window.onclick;
+				window.onclick = function(event){
+					old && old();
+					createHeart(event);
+				}
+			}
+			function createHeart(event){
+				var d = document.createElement("div");
+				d.className = "heart";
+				hearts.push({
+					el : d,
+					x : event.clientX - 5,
+					y : event.clientY - 5,
+					scale : 1,
+					alpha : 1,
+					color : randomColor()
+				});
+				document.body.appendChild(d);
+			}
+			function css(css){
+				var style = document.createElement("style");
+				style.type="text/css";
+				try{
+					style.appendChild(document.createTextNode(css));
+				}catch(ex){
+					style.styleSheet.cssText = css;
+				}
+				document.getElementsByTagName('head')[0].appendChild(style);
+			}
+			function randomColor(){
+				return "rgb("+(~~(Math.random()*255))+","+(~~(Math.random()*255))+","+(~~(Math.random()*255))+")";
+			}
+		})(window,document);
+</script>
+<script type="text/javascript">
+/* 鼠标点击特效 */
+var a_idx = 0;
+jQuery(document).ready(function($) {
+    $("body").click(function(e) {
+var a = new Array("苗莉shi", "我爱你", "叫爸爸", "快叫呀", "我爱你", "张大爷", "帅帅的张大爷" ,"苗莉shi", "漂漂的苗莉shi", "我爱你", "想你了", "叫爸爸");
+var $i = $("<span/>").text(a[a_idx]);
+        a_idx = (a_idx + 1) % a.length;
+var x = e.pageX,
+        y = e.pageY;
+        $i.css({
+"z-index": 999999999999999999999999999999999999999999999999999999999999999999999,
+"top": y - 20,
+"left": x,
+"position": "absolute",
+"font-weight": "bold",
+"color": "#ff6651"
+        });
+        $("body").append($i);
+        $i.animate({
+"top": y - 180,
+"opacity": 0
+        },
+        1500,
+function() {
+            $i.remove();
+        });
+    });
+});
+</script>
+<style type="text/css">.snow-container{position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:100001;}</style>
+<div class="snow-container"></div>
+
+<body>
+<audio src="er_wei_ma/ycjh.mp3" controls autoplay></audio>
+
+  <center>
+          <div class="tittle" id="t-1">
+        <table width="100%" border="0" height="100%">
+          <tr>
+            <td align="center">苗莉shi！</td>
+          </tr>
+        </table>
+      </div>
+          <div class="tittle" id="t-2">
+        <table width="100%" border="0" height="100%">
+          <tr>
+            <td align="center">你想我没？</td>
+          </tr>
+        </table>
+      </div>
+          <div class="tittle" id="t-3">
+        <table width="100%" border="0" height="100%">
+          <tr>
+            <td align="center">我想你了！</td>
+          </tr>
+        </table>
+      </div>
+          <div class="tittle" id="t-4">
+        <table width="100%" border="0" height="100%">
+          <tr>
+            <td align="center">虽然天气很热</td>
+          </tr>
+        </table>
+      </div>
+          <div class="tittle" id="t-5">
+        <table width="100%" border="0" height="100%">
+          <tr>
+            <td align="center">但是有你陪着</td>
+          </tr>
+        </table>
+      </div>
+          <div class="tittle" id="t-6">
+        <table width="100%" border="0" height="100%">
+          <tr>
+            <td align="center">很好，很好！</td>
+          </tr>
+        </table>
+      </div>
+          <div class="tittle" id="t-7">
+        <table width="100%" border="0" height="100%">
+          <tr>
+            <td align="center">五年了！</td>
+          </tr>
+        </table>
+      </div>
+          <div class="tittle" id="t-8">
+        <table width="100%" border="0" height="100%">
+          <tr>
+            <td align="center">有过欢笑也有过泪花</td>
+          </tr>
+        </table>
+      </div>
+          <div class="tittle" id="t-9">
+        <table width="100%" border="0" height="100%">
+          <tr>
+            <td align="center">有过傲慢的争吵也有过温馨的体贴</td>
+          </tr>
+        </table>
+      </div>
+          <div class="tittle" id="t-10">
+        <table width="100%" border="0" height="100%">
+          <tr>
+            <td align="center">这一切的一切</td>
+          </tr>
+        </table>
+      </div>
+          <div class="tittle" id="t-11">
+        <table width="100%" border="0" height="100%">
+          <tr>
+            <td align="center">让我感觉是那么的熟悉与开心</td>
+          </tr>
+        </table>
+      </div>
+          <div class="tittle" id="t-12">
+        <table width="100%" border="0" height="100%">
+          <tr>
+            <td align="center">难以忘记最初相识的各种机缘巧合</td>
+          </tr>
+        </table>
+      </div>
+          <div class="tittle" id="t-13">
+        <table width="100%" border="0" height="100%">
+          <tr>
+            <td align="center">那时，我被一种神奇的东西吸引</td>
+          </tr>
+        </table>
+      </div>
+          <div class="tittle" id="t-14">
+        <table width="100%" border="0" height="100%">
+          <tr>
+            <td align="center">我感觉，这就是缘分！</td>
+          </tr>
+        </table>
+      </div>
+          <div class="tittle" id="t-15">
+        <table width="100%" border="0" height="100%">
+          <tr>
+            <td align="center">我相信，这就是一见钟情！</td>
+          </tr>
+        </table>
+      </div>
+          <div class="tittle" id="t-16">
+        <table width="100%" border="0" height="100%">
+          <tr>
+            <td align="center">那以后</td>
+          </tr>
+        </table>
+      </div>
+          <div class="tittle" id="t-17">
+        <table width="100%" border="0" height="100%">
+          <tr>
+            <td align="center">你的一个微笑</td>
+          </tr>
+        </table>
+      </div>
+          <div class="tittle" id="t-18">
+        <table width="100%" border="0" height="100%">
+          <tr>
+            <td align="center">一个表情</td>
+          </tr>
+        </table>
+      </div>
+          <div class="tittle" id="t-19">
+        <table width="100%" border="0" height="100%">
+          <tr>
+            <td align="center">都深深的留在了我的心里</td>
+          </tr>
+        </table>
+      </div>
+          <div class="tittle" id="t-20">
+        <table width="100%" border="0" height="100%">
+          <tr>
+            <td align="center">我一次次的更加认定</td>
+          </tr>
+        </table>
+      </div>
+          <div class="tittle" id="t-21">
+        <table width="100%" border="0" height="100%">
+          <tr>
+            <td align="center">你！</td>
+          </tr>
+        </table>
+      </div>
+          <div class="tittle" id="t-22">
+        <table width="100%" border="0" height="100%">
+          <tr>
+            <td align="center">就是我要用生命去保护的那个人！</td>
+          </tr>
+        </table>
+      </div>
+          <div class="tittle" id="t-23">
+        <table width="100%" border="0" height="100%">
+          <tr>
+            <td align="center">只要你想</td>
+          </tr>
+        </table>
+      </div>
+          <div class="tittle" id="t-24">
+        <table width="100%" border="0" height="100%">
+          <tr>
+            <td align="center">我愿意陪你去任何你想去的地方！</td>
+          </tr>
+        </table>
+      </div>
+          <div class="tittle" id="t-25">
+        <table width="100%" border="0" height="100%">
+          <tr>
+            <td align="center">只要你想</td>
+          </tr>
+        </table>
+      </div>
+          <div class="tittle" id="t-26">
+        <table width="100%" border="0" height="100%">
+          <tr>
+            <td align="center">我愿意陪你去吃任何你喜欢吃的东西！</td>
+          </tr>
+        </table>
+      </div>
+          <div class="tittle" id="t-27">
+        <table width="100%" border="0" height="100%">
+          <tr>
+            <td align="center">只要你想</td>
+          </tr>
+        </table>
+      </div>
+          <div class="tittle" id="t-28">
+        <table width="100%" border="0" height="100%">
+          <tr>
+            <td align="center">我愿意陪你去做任何你想做的事！</td>
+          </tr>
+        </table>
+      </div>
+          <div class="tittle" id="t-29">
+        <table width="100%" border="0" height="100%">
+          <tr>
+            <td align="center">只要你想</td>
+          </tr>
+        </table>
+      </div>
+          <div class="tittle" id="t-30">
+        <table width="100%" border="0" height="100%">
+          <tr>
+            <td align="center">我会一直陪着你！</td>
+          </tr>
+        </table>
+      </div>
+          <div class="tittle" id="t-31">
+        <table width="100%" border="0" height="100%">
+          <tr>
+            <td align="center">能够遇见你</td>
+          </tr>
+        </table>
+      </div>
+          <div class="tittle" id="t-32">
+        <table width="100%" border="0" height="100%">
+          <tr>
+            <td align="center">对我来说就是最大的幸福！</td>
+          </tr>
+        </table>
+      </div>
+          <div class="tittle" id="t-33">
+        <table width="100%" border="0" height="100%">
+          <tr>
+            <td align="center">以后的日子</td>
+          </tr>
+        </table>
+      </div>
+          <div class="tittle" id="t-34">
+        <table width="100%" border="0" height="100%">
+          <tr>
+            <td align="center">也许会无比艰辛！</td>
+          </tr>
+        </table>
+      </div>
+          <div class="tittle" id="t-35">
+        <table width="100%" border="0" height="100%">
+          <tr>
+            <td align="center">请，抓紧我的手！</td>
+          </tr>
+        </table>
+      </div>
+          <div class="tittle" id="t-36">
+        <table width="100%" border="0" height="100%">
+          <tr>
+            <td align="center">我相信</td>
+          </tr>
+        </table>
+      </div>
+          <div class="tittle" id="t-37">
+        <table width="100%" border="0" height="100%">
+          <tr>
+            <td align="center">陪伴是最长情的告白！</td>
+          </tr>
+        </table>
+      </div>
+          <div class="tittle" id="t-38">
+        <table width="100%" border="0" height="100%">
+          <tr>
+            <td align="center">我爱你，苗莉shi！</td>
+          </tr>
+        </table>
+      </div>
+          <div class="tittle" id="t-39">
+        <table width="100%" border="0" height="100%">
+          <tr>
+            <td align="center">你叫声爸爸呀</td>
+          </tr>
+        </table>
+      </div>
+
+          <div class="tittle" id="t-40">
+        <table width="100%" border="0" height="100%">
+          <tr>
+            <td align="center">略略略</td>
+          </tr>
+        </table>
+      </div>
+          <div class="tittle" id="t-41">
+        <table width="100%" border="0" height="100%">
+          <tr>
+            <td align="center">那些想你的瞬间</td>
+          </tr>
+        </table>
+      </div>
+<!--          <div class="tittle" id="t-41">-->
+<!--        <table cellpadding="0" cellspacing="0" border="0" width="100%" height="200px">-->
+<!--          <tr>-->
+<!--            <td align="center" valign="middle" >-->
+<!--                <img src="D.jpg" height="400" width="500" alt="" style="border:1px solid #ccc;" />-->
+<!--            </td>-->
+<!--          </tr>-->
+<!--        </table>-->
+<!--      </div>-->
+<!--          <div class="tittle" id="t-41">-->
+<!--        <table cellpadding="0" cellspacing="0" border="0" width="100%" height="200px">-->
+<!--          <tr>-->
+<!--            <td align="center" valign="center"><img src="D.jpg" height="420" width="500" alt="" float="" style="border:1px solid #fff5fa;" /></td>-->
+<!--          </tr>-->
+<!--        </table>-->
+<!--      </div>-->
+  </center>
+</div>
+  <div align="center" class="tishi">
+    <span class="tishiContent">想继续就叫爸爸</span>
+	<br/>
+	<span style="font-size: 10px;">你张大爷 & 苗莉shi</span>
+	<br/>
+
+
+  </div>
+
+
+
+	<link rel="stylesheet" href="http://i.51bbw.cn/mp3/css/cuplayer.css">
+				 <div style="position:absolute; top:150px; right:50px;z-index: 9999999;">
+        <audio id="main_audio" autoplay="autoplay" preload="auto" loop>
+            <source src="http://i.51bbw.cn/mp3/mp3.php?id=5356944" type="audio/mpeg" />
+        </audio>
+        <a class="c-white fs-12 icon-play rotate" id="btn-play" href="javascript:void(0);"></a>
+    </div>
+
+    <script type="text/javascript">
+    //获取picid函数
+    $(function(){
+        $("area").click(function(){
+           var  picId=$(this).attr("data-id");
+           var picSrc="images/img_big/"+picId+".jpg"
+            $(".modal-content>.pic-box>img").attr("src",picSrc);
+        })
+        var isPlaying = function(audio) {return !audio.paused;}
+        var a = document.getElementById('main_audio');
+        $('#btn-play').on('click', function() {
+            if($(this).hasClass('rotate')) {
+                a.pause();
+                $(this).removeClass('rotate');
+            } else {
+                a.play();
+                $(this).addClass('rotate');
+            }
+        });
+
+    })
+    </script>
+
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+    <script>
+    function autoPlayAudio1() {
+        wx.config({
+            // 配置信息, 即使不正确也能使用 wx.ready
+            debug: false,
+            appId: '',
+            timestamp: 1,
+            nonceStr: '',
+            signature: '',
+            jsApiList: []
+        });
+        wx.ready(function() {
+            document.getElementById('main_audio').play();
+        });
+    }
+    autoPlayAudio1(); // 推荐使用方法1
+    </script>
+</body>
+</html>
+				<div style="display:none">
+<script type="text/javascript">
+    /*677*250 创建于 Sun Oct 09 2016*/
+    var cpro_id = "u2782229";
+</script>
+<script type="text/javascript" src="http://cpro.baidustatic.com/cpro/ui/c.js"></script>
+</div>
+	<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?409ccbe4694e0213c11f33f5b461a258";
+  var s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<!-- Dynamic page generated in 0.150 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2017-07-24 10:33:36 -->
+
+<!-- super cache -->
